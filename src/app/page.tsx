@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import { Navbar } from '@/components/navbar';
 import { Bubble } from '@/components/atoms/bubble';
+import { TextXS } from '@/components/atoms/text-xs';
 import { Card } from '@/components/molecules/card';
 import { Checkbox } from '@/components/molecules/checkbox';
 
@@ -10,6 +11,7 @@ import code from '@/assets/icon-code.png';
 import user from '@/assets/icon-user.png';
 import kor from '@/assets/icon-kor.png';
 import setting from '@/assets/icon-setting.png';
+import { TextInfo } from '@/components/molecules/text-info';
 
 export default function Home() {
   return (
@@ -46,8 +48,8 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-[18px] space-y-2">
-            <p className="text-[13px] font-black text-[##5E626F]">010-0000-0000</p>
-            <p className="text-[13px] font-black text-[##5E626F]">aaaaa@naver.com</p>
+            <TextXS text="010-0000-0000" />
+            <TextXS text="aaaaa@naver.com" />
           </div>
           <div className="mb-[60px] mt-[18px] flex flex-wrap gap-2">
             <Card text="해외 개발자 원격 채용" icon={code} />
@@ -56,32 +58,16 @@ export default function Home() {
             <Card text="해외 개발자 활용 서비스" icon={setting} />
           </div>
           <div className="flex flex-wrap items-center justify-between gap-9">
-            <div>
-              <p className="text-xs font-black text-[#343741]">상호명</p>
-              <p className="mb-[5px] mt-[10px] text-xs font-black text-[#5E626F]">하이퍼하이어</p>
-              <p className="text-xs font-black text-[#5E626F]">Hyperhire India Private Limited</p>
-            </div>
-            <div>
-              <p className="text-xs font-black text-[#343741]">대표 CEO</p>
-              <p className="mb-[5px] mt-[10px] text-xs font-black text-[#5E626F]">김주현</p>
-              <p className="text-xs font-black text-[#5E626F]">Juhyun Kim</p>
-            </div>
-            <div>
-              <p className="text-xs font-black text-[#343741]">사업자등록번호 CIN</p>
-              <p className="mb-[5px] mt-[10px] text-xs font-black text-[#5E626F]">427-86-01187</p>
-              <p className="text-xs font-black text-[#5E626F]">U74110DL2016PTC290812</p>
-            </div>
-            <div>
-              <p className="text-xs font-black text-[#343741]">주소 ADDRESS</p>
-              <p className="mb-[5px] mt-[10px] text-xs font-black text-[#5E626F]">
-                서울특별시 강남대로 479, 지하 1층 238호
-              </p>
-              <p className="text-xs font-black text-[#5E626F]">
-                D-138, Street number 11, Jagjeet Nagar, North East Delhi, New Delhi, 110053 India
-              </p>
-            </div>
+            <TextInfo title="상호명" body="하이퍼하이어" footer="Hyperhire India Private Limited" />
+            <TextInfo title="대표 CEO" body="김주현" footer="Juhyun Kim" />
+            <TextInfo title="사업자등록번호 CIN" body="427-86-01187" footer="U74110DL2016PTC290812" />
+            <TextInfo
+              title="주소 ADDRESS"
+              body="서울특별시 강남대로 479, 지하 1층 238호"
+              footer="D-138, Street number 11, Jagjeet Nagar, North East Delhi, New Delhi, 110053 India"
+            />
           </div>
-          <p className="mt-9 text-xs font-black text-[#5E626F]">ⓒ 2023 Hyperhire</p>
+          <TextXS text="&#169; 2023 Hyperhire" className="mt-9" />
         </div>
       </div>
     </>
