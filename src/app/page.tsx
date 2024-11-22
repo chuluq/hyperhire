@@ -1,17 +1,18 @@
 import Image from 'next/image';
 
-import { Navbar } from '@/components/navbar';
 import { Bubble } from '@/components/atoms/bubble';
 import { TextXS } from '@/components/atoms/text-xs';
 import { Card } from '@/components/molecules/card';
 import { Checkbox } from '@/components/molecules/checkbox';
+import { Navbar } from '@/components/molecules/navbar';
+import { TextInfo } from '@/components/molecules/text-info';
+import { ImageCarousel } from '@/components/templates/image-carousel';
 
 import logo from '@/assets/logo.png';
 import code from '@/assets/icon-code.png';
 import user from '@/assets/icon-user.png';
 import kor from '@/assets/icon-kor.png';
 import setting from '@/assets/icon-setting.png';
-import { TextInfo } from '@/components/molecules/text-info';
 
 export default function Home() {
   return (
@@ -28,7 +29,9 @@ export default function Home() {
             <Bubble text="월 100만원" isDollarSign />
           </div>
 
-          {/* Carousel */}
+          <div className="mt-4 self-center px-4">
+            <ImageCarousel />
+          </div>
 
           <div className="mb-4 mt-6 flex flex-wrap items-center justify-start gap-2 px-4">
             <Checkbox text="한국어 능력" />
