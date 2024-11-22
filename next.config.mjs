@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  env: {
-    API_URL: 'https://hyperhire-in31obc77-chuluqs-projects.vercel.app',
-  },
-};
+const nextConfig = {};
 
 export default nextConfig;
