@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import type { BoxInfoType, CardData, FooterData } from '@/lib/types';
+
 import { Bubble } from '@/components/atoms/bubble';
 import { TextXS } from '@/components/atoms/text-xs';
 import { Card } from '@/components/molecules/card';
@@ -10,18 +12,16 @@ import { ImageCarousel } from '@/components/templates/image-carousel';
 import { BoxInfo } from '@/components/atoms/box-info';
 import { TextIcon } from '@/components/molecules/text-with-icon';
 
+import { getBoxInfo, getCard, getCheckbox, getFooter, getTextIcon } from '@/lib/call-api';
 import logo from '@/assets/logo.png';
-import code from '@/assets/icon-code.png';
-import user from '@/assets/icon-user.png';
-import kor from '@/assets/icon-kor.png';
-import setting from '@/assets/icon-setting.png';
-import marketing from '@/assets/icon-marketing.png';
-import image from '@/assets/icon-image.png';
-import box from '@/assets/icon-box.png';
-import target from '@/assets/icon-target.png';
-import call from '@/assets/icon-call.png';
 
-export default function Home() {
+export default async function Home() {
+  let footerData = await getFooter();
+  let cardData = await getCard();
+  let textIcon = await getTextIcon();
+  let boxInfo = await getBoxInfo();
+  let checkbox = await getCheckbox();
+
   return (
     <>
       <div className="bg-gradient-to-r from-[#26c2b9] to-[#288be7]">
@@ -38,9 +38,9 @@ export default function Home() {
                 <p className="hidden text-lg font-black text-white underline lg:flex">개발자가 필요하신가요?</p>
               </div>
               <div className="hidden gap-x-12 lg:my-[60px] lg:flex">
-                <BoxInfo title="평균 월 120만원" body="임금을 해당 국가를 기준으로 계산합니다." />
-                <BoxInfo title="최대 3회 인력교체" body="막상 채용해보니 맞지 않아도 걱정하지 마세요. " />
-                <BoxInfo title="평균 3일, 최대 10일" body="급하게 사람이 필요한 경우에도 빠른 채용이 가능합니다." />
+                {boxInfo.map((item: BoxInfoType, index: number) => (
+                  <BoxInfo key={index} title={item.title} body={item.body} />
+                ))}
               </div>
             </div>
             <div>
@@ -52,19 +52,16 @@ export default function Home() {
               </div>
             </div>
             <div className="mb-4 mt-6 flex flex-wrap items-center justify-start gap-2 px-4 lg:hidden">
-              <Checkbox text="한국어 능력" />
-              <Checkbox text="업무 수행 능력" />
-              <Checkbox text="겸업 여부" />
-              <Checkbox text="평판 조회" />
+              {checkbox.map((item: { id: number; text: string }, index: number) => (
+                <Checkbox key={index} text={item.text} />
+              ))}
             </div>
             <p className="mb-[60px] px-4 font-black text-[#FBFF23] underline lg:hidden">개발자가 필요하신가요?</p>
           </div>
           <div className="hidden lg:mb-24 lg:flex lg:flex-wrap lg:items-center lg:gap-[10px]">
-            <TextIcon icon={marketing} text="해외 마케팅" />
-            <TextIcon icon={image} text="퍼블리셔" />
-            <TextIcon icon={box} text="캐드원(제도사)" />
-            <TextIcon icon={target} text="해외 세일즈" />
-            <TextIcon icon={call} text="해외 CS" />
+            {textIcon.map((item: CardData, index: number) => (
+              <TextIcon key={index} icon={item.iconUrl} text={item.text} />
+            ))}
           </div>
         </div>
       </div>
@@ -84,21 +81,15 @@ export default function Home() {
               </div>
             </div>
             <div className="mb-[60px] mt-[18px] flex flex-wrap gap-2 lg:mb-11 lg:mt-0 lg:gap-4">
-              <Card text="해외 개발자 원격 채용" icon={code} />
-              <Card text="외국인 원격 채용 (비개발)" icon={user} />
-              <Card text="한국어 가능 외국인 채용" icon={kor} />
-              <Card text="해외 개발자 활용 서비스" icon={setting} />
+              {cardData.map((item: CardData, index: number) => (
+                <Card key={index} text={item.text} icon={item.iconUrl} />
+              ))}
             </div>
           </div>
           <div className="flex flex-wrap items-center justify-between gap-9">
-            <TextInfo title="상호명" body="하이퍼하이어" footer="Hyperhire India Private Limited" />
-            <TextInfo title="대표 CEO" body="김주현" footer="Juhyun Kim" />
-            <TextInfo title="사업자등록번호 CIN" body="427-86-01187" footer="U74110DL2016PTC290812" />
-            <TextInfo
-              title="주소 ADDRESS"
-              body="서울특별시 강남대로 479, 지하 1층 238호"
-              footer="D-138, Street number 11, Jagjeet Nagar, North East Delhi, New Delhi, 110053 India"
-            />
+            {footerData.map((item: FooterData, index: number) => (
+              <TextInfo key={index} title={item.title} body={item.body} footer={item.footer} />
+            ))}
           </div>
           <TextXS text="&#169; 2023 Hyperhire" className="mt-9" />
         </div>
