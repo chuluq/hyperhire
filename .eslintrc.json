@@ -19,8 +19,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@next/next/recommended",
     "next/core-web-vitals",
-    "next/typescript",
-    "prettier"
+    "next/typescript"
   ],
   "rules": {
     "prettier/prettier": ["error", { "endOfLine": "auto" }, { "usePrettierrc": true }],
