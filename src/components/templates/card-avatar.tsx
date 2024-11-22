@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/atoms/avatar';
+import { Avatar, AvatarFallback } from '@/components/atoms/avatar';
 import { CardTag } from '@/components/molecules/card-tag';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/molecules/new-card';
 

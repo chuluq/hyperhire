@@ -16,11 +16,11 @@ import { getBoxInfo, getCard, getCheckbox, getFooter, getTextIcon } from '@/lib/
 import logo from '@/assets/logo.png';
 
 export default async function Home() {
-  let footerData = await getFooter();
-  let cardData = await getCard();
-  let textIcon = await getTextIcon();
-  let boxInfo = await getBoxInfo();
-  let checkbox = await getCheckbox();
+  const footerData = await getFooter();
+  const cardData = await getCard();
+  const textIcon = await getTextIcon();
+  const boxInfo = await getBoxInfo();
+  const checkbox = await getCheckbox();
 
   return (
     <>

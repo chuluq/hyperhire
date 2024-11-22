@@ -1,4 +1,3 @@
-import { type NextApiRequest } from 'next';
 import { type CardData } from '@/lib/types';
 
 import code from '@/assets/icon-code.png';
@@ -29,6 +28,6 @@ const cardData: CardData[] = [
   },
 ];
 
-export function GET(req: NextApiRequest) {
+export function GET() {
   return Response.json(cardData);
 }

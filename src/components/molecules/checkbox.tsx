@@ -4,7 +4,7 @@ import checkbox from '@/assets/icon-checkbox.png';
 
 export const Checkbox = ({ text }: { text: string }) => {
   return (
-    <div className="flex grow items-center gap-x-3 w-32">
+    <div className="flex w-32 grow items-center gap-x-3">
       <Image src={checkbox} alt="icon-checkbox" width={20} height={20} />
       <p className="font-black text-white">{text}</p>
     </div>

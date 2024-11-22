@@ -1,4 +1,3 @@
-import { type NextApiRequest } from 'next';
 import { type BoxInfoType } from '@/lib/types';
 
 const boxInfo: BoxInfoType[] = [
@@ -19,6 +18,6 @@ const boxInfo: BoxInfoType[] = [
   },
 ];
 
-export function GET(req: NextApiRequest) {
+export function GET() {
   return Response.json(boxInfo);
 }

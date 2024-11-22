@@ -10,15 +10,15 @@ interface CardProps {
 
 export const Card = ({ text, icon }: CardProps) => {
   return (
-    <div className="bg-white flex flex-col p-4 rounded-xl gap-4 w-[160px] h-[163px]">
+    <div className="flex h-[163px] w-[160px] flex-col gap-4 rounded-xl bg-white p-4">
       <div className="space-y-3">
-        <div className="flex justify-center items-center size-10 bg-[#eff1f6] rounded-lg p-2 gap-[10px]">
+        <div className="flex size-10 items-center justify-center gap-[10px] rounded-lg bg-[#eff1f6] p-2">
           <Image src={icon} alt="icon-card" />
         </div>
         <p className="text-sm font-black text-[#343741]">{text}</p>
       </div>
       <Link href="#" className="flex items-center gap-x-2">
-        <p className="font-black text-sm text-[#5E626F]">바로가기</p>
+        <p className="text-sm font-black text-[#5E626F]">바로가기</p>
         <Image src={rightArrow} alt="icon-arrow-right-square" width={20} height={20} />
       </Link>
     </div>

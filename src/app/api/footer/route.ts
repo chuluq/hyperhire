@@ -1,4 +1,3 @@
-import { type NextApiRequest } from 'next';
 import { type FooterData } from '@/lib/types';
 
 const footerData: FooterData[] = [
@@ -28,6 +27,6 @@ const footerData: FooterData[] = [
   },
 ];
 
-export function GET(req: NextApiRequest) {
+export function GET() {
   return Response.json(footerData);
 }

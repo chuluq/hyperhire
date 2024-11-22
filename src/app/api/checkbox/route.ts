@@ -1,5 +1,3 @@
-import { type NextApiRequest } from 'next';
-
 const boxInfo: { id: number; text: string }[] = [
   {
     id: 0,
@@ -19,6 +17,6 @@ const boxInfo: { id: number; text: string }[] = [
   },
 ];
 
-export function GET(req: NextApiRequest) {
+export function GET() {
   return Response.json(boxInfo);
 }

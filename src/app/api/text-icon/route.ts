@@ -1,4 +1,3 @@
-import { type NextApiRequest } from 'next';
 import { type CardData } from '@/lib/types';
 
 import marketing from '@/assets/icon-marketing.png';
@@ -35,6 +34,6 @@ const textIconData: CardData[] = [
   },
 ];
 
-export function GET(req: NextApiRequest) {
+export function GET() {
   return Response.json(textIconData);
 }
