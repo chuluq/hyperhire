@@ -2,7 +2,6 @@
 
 import React from 'react';
 
-import { Card, CardContent } from '@/components/molecules/new-card';
 import {
   Carousel,
   CarouselContent,

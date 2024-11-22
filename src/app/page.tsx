@@ -69,33 +69,39 @@ export default function Home() {
         </div>
       </div>
       <div className="bg-[#FBFBFB] px-4 py-16">
-        <div className="space-y-4">
-          <Image src={logo} alt="logo" />
-          <p className="max-w-[247px] text-sm font-black text-[#343741]">
-            우리는 국가의 장벽을 넘어 최고의 인재를 매칭해드립니다.
-          </p>
+        <div className="container mx-auto max-w-screen-lg">
+          <div className="flex flex-col lg:flex-row lg:gap-40">
+            <div className="space-y-[18px]">
+              <div className="space-y-4">
+                <Image src={logo} alt="logo" />
+                <p className="max-w-[247px] text-sm font-black text-[#343741]">
+                  우리는 국가의 장벽을 넘어 최고의 인재를 매칭해드립니다.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <TextXS text="010-0000-0000" />
+                <TextXS text="aaaaa@naver.com" />
+              </div>
+            </div>
+            <div className="mb-[60px] mt-[18px] flex flex-wrap gap-2 lg:mb-11 lg:mt-0 lg:gap-4">
+              <Card text="해외 개발자 원격 채용" icon={code} />
+              <Card text="외국인 원격 채용 (비개발)" icon={user} />
+              <Card text="한국어 가능 외국인 채용" icon={kor} />
+              <Card text="해외 개발자 활용 서비스" icon={setting} />
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center justify-between gap-9">
+            <TextInfo title="상호명" body="하이퍼하이어" footer="Hyperhire India Private Limited" />
+            <TextInfo title="대표 CEO" body="김주현" footer="Juhyun Kim" />
+            <TextInfo title="사업자등록번호 CIN" body="427-86-01187" footer="U74110DL2016PTC290812" />
+            <TextInfo
+              title="주소 ADDRESS"
+              body="서울특별시 강남대로 479, 지하 1층 238호"
+              footer="D-138, Street number 11, Jagjeet Nagar, North East Delhi, New Delhi, 110053 India"
+            />
+          </div>
+          <TextXS text="&#169; 2023 Hyperhire" className="mt-9" />
         </div>
-        <div className="mt-[18px] space-y-2">
-          <TextXS text="010-0000-0000" />
-          <TextXS text="aaaaa@naver.com" />
-        </div>
-        <div className="mb-[60px] mt-[18px] flex flex-wrap gap-2">
-          <Card text="해외 개발자 원격 채용" icon={code} />
-          <Card text="외국인 원격 채용 (비개발)" icon={user} />
-          <Card text="한국어 가능 외국인 채용" icon={kor} />
-          <Card text="해외 개발자 활용 서비스" icon={setting} />
-        </div>
-        <div className="flex flex-wrap items-center justify-between gap-9">
-          <TextInfo title="상호명" body="하이퍼하이어" footer="Hyperhire India Private Limited" />
-          <TextInfo title="대표 CEO" body="김주현" footer="Juhyun Kim" />
-          <TextInfo title="사업자등록번호 CIN" body="427-86-01187" footer="U74110DL2016PTC290812" />
-          <TextInfo
-            title="주소 ADDRESS"
-            body="서울특별시 강남대로 479, 지하 1층 238호"
-            footer="D-138, Street number 11, Jagjeet Nagar, North East Delhi, New Delhi, 110053 India"
-          />
-        </div>
-        <TextXS text="&#169; 2023 Hyperhire" className="mt-9" />
       </div>
     </>
   );
