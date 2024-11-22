@@ -2,14 +2,7 @@
 
 import React from 'react';
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from '@/components/organisms/carousel';
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '@/components/organisms/carousel';
 import { CardAvatar } from '@/components/templates/card-avatar';
 
 import { cn } from '@/lib/utils';
@@ -34,28 +27,19 @@ export const ImageCarousel = () => {
     });
   }, [api]);
 
-  const isMiddleCard = (index: number) => {
-    const startIndex = current % count;
-    const middleIndex = (startIndex + Math.floor(cardsPerPage / 2)) % count;
-    return index === middleIndex;
-  };
-
   return (
     <Carousel setApi={setApi} className="w-full max-w-sm">
-      <CarouselContent className="">
+      <CarouselContent className="-ml-1 flex">
         {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="basis-1/3">
+          <CarouselItem key={index} className="basis-1/3 pl-1">
             <CardAvatar
               className={cn({
-                'z-10 scale-95 transform bg-blue-200': !isMiddleCard(index),
-                'z-20 scale-105 transform bg-red-200': isMiddleCard(index),
+                'z-50 -translate-x-10 bg-white': ((current % count) + Math.floor(cardsPerPage / 2)) % count === index,
               })}
             />
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
     </Carousel>
   );
 };

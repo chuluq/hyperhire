@@ -12,7 +12,7 @@ export const CardAvatar = ({ className }: React.HTMLAttributes<HTMLDivElement>) 
   return (
     <Card
       className={cn(
-        'flex w-[234px] flex-col items-center justify-center space-y-4 rounded-xl bg-white px-4 py-9 drop-shadow-lg',
+        'relative flex w-[234px] flex-col items-center justify-center space-y-4 rounded-xl bg-[#EDFCFF] px-4 py-9 drop-shadow',
         className,
       )}>
       <CardHeader className="p-0">
